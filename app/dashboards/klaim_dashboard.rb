@@ -16,7 +16,9 @@ class KlaimDashboard < Administrate::BaseDashboard
     jumlah: Field::String.with_options(searchable: false),
     photo: Field::String,
     tempat: Field::String,
-    verify: Field::String,
+    verify: Field::SelectBasic.with_options({
+      choices: ['PENDING', 'ACCEPT', 'ERROR']
+    }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     kredit: Field::Boolean,
