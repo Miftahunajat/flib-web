@@ -20,6 +20,7 @@ class UserDashboard < Administrate::BaseDashboard
     jumlah_kredit: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    phone: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -49,6 +50,7 @@ class UserDashboard < Administrate::BaseDashboard
   jumlah_kredit
   created_at
   updated_at
+  phone
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -64,6 +66,7 @@ class UserDashboard < Administrate::BaseDashboard
   tanggal_masuk
   jumlah_dependant
   jumlah_kredit
+  phone
   ].freeze
 
   # COLLECTION_FILTERS

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user, include: :pangkat
+    render json: @user, include: [:pangkat, :benefits, :rewards]
   end
 
   # POST /users
@@ -19,6 +19,23 @@ class UsersController < ApplicationController
 
     if @user.save
       render json: @user, status: :created, location: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+  def tuker_kredit
+    hash_params = {}
+    hash_params[:user_id] = params[:user_id]
+    hash_params[:benefit_id] = params[:benefit_id]
+    benefit = Benefit.find(params[:benefit_id])
+    @user = User.find(params[:user_id])
+    @user.increment(:jumlah_kredit, benefit.nilai_tukar)
+    @user.benefits.delete(benefit)
+    @user.save
+
+    if @user.save
+      render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end

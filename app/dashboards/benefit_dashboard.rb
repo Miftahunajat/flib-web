@@ -15,6 +15,8 @@ class BenefitDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     desc: Field::Text,
+    kelas: Field::String.with_options(searchable: false),
+    limit: Field::String.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +41,8 @@ class BenefitDashboard < Administrate::BaseDashboard
   created_at
   updated_at
   desc
+  kelas
+  limit
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -49,6 +53,8 @@ class BenefitDashboard < Administrate::BaseDashboard
   nama
   nilai_tukar
   desc
+  kelas
+  limit
   ].freeze
 
   # COLLECTION_FILTERS
@@ -66,7 +72,7 @@ class BenefitDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how benefits are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(benefit)
-  #   "Benefit ##{benefit.id}"
-  # end
+  def display_resource(benefit)
+    "#{benefit.nama}"
+  end
 end

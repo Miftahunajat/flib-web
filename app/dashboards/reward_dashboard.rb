@@ -13,9 +13,10 @@ class RewardDashboard < Administrate::BaseDashboard
     startdate: Field::DateTime,
     enddate: Field::DateTime,
     jumlah_kredit: Field::String.with_options(searchable: false),
-    photo: Field::String,
+    photo: Field::Carrierwave,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    desc: Field::Text,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -41,6 +42,7 @@ class RewardDashboard < Administrate::BaseDashboard
   photo
   created_at
   updated_at
+  desc
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,6 +54,7 @@ class RewardDashboard < Administrate::BaseDashboard
   enddate
   jumlah_kredit
   photo
+  desc
   ].freeze
 
   # COLLECTION_FILTERS

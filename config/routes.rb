@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :user_rewards
+  resources :user_benefits
   namespace :admin do
       resources :benefits
       resources :benefit_categories
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
       resources :statuses
       resources :users
       resources :users_plans
+      resources :user_benefits
+      resources :user_rewards
 
       root to: "benefits#index"
     end
@@ -27,7 +31,11 @@ Rails.application.routes.draw do
   resources :benefits
   resources :benefit_categories
   resources :plans
-  resources :users
+  resources :users do
+
+  end
+  post '/tuker_kredit', to: 'users#tuker_kredit'
+
   post '/login', to: 'users#login'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -22,10 +22,4 @@ test:
   database: flib/test
 
 production:
-  <<: *default
-  adapter: pg
-  host: ec2-107-21-98-89.compute-1.amazonaws.com
-  url: postgres://fdejgfiywdoldc:ca57037e0845aebf3a588330480c337829b486c22052650efe3c022b6b12e8a7@ec2-107-21-98-89.compute-1.amazonaws.com:5432/d6784fpbveinp6
-  database: d6784fpbveinp6
-  username: fdejgfiywdoldc
-  password: ca57037e0845aebf3a588330480c337829b486c22052650efe3c022b6b12e8a7
+  url: <%= ENV['DATABASE_URL'] %>

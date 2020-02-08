@@ -5,7 +5,7 @@ class KlaimsController < ApplicationController
   def index
     @klaims = Klaim.all
 
-    render json: @klaims
+    render json: {items: @klaims}, include: :benefit
   end
 
   # GET /klaims/1
@@ -23,6 +23,7 @@ class KlaimsController < ApplicationController
     @klaim.jumlah = params[:jumlah]
     @klaim.photo = params[:file]
     @klaim.tempat = params[:tempat]
+    @klaim.kredit = params[:kredit]
 
     if @klaim.save
       render json: @klaim, status: :created, location: @klaim

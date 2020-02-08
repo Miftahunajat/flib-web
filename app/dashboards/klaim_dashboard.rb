@@ -16,9 +16,10 @@ class KlaimDashboard < Administrate::BaseDashboard
     jumlah: Field::String.with_options(searchable: false),
     photo: Field::String,
     tempat: Field::String,
-    jenis: Field::String,
+    verify: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    kredit: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -44,9 +45,10 @@ class KlaimDashboard < Administrate::BaseDashboard
   jumlah
   photo
   tempat
-  jenis
+  verify
   created_at
   updated_at
+  kredit
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -60,7 +62,8 @@ class KlaimDashboard < Administrate::BaseDashboard
   jumlah
   photo
   tempat
-  jenis
+  verify
+  kredit
   ].freeze
 
   # COLLECTION_FILTERS

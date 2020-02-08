@@ -19,6 +19,10 @@ class UsersPlansController < ApplicationController
     hash_params[:user_id] = params[:user_id]
     hash_params[:plan_id] = params[:plan_id]
     @users_plan = UsersPlan.new(hash_params)
+    plan = Plan.find(params[:plan_id])
+    user = User.find(params[:user_id])
+    user.decrement(:jumlah_kredit, plan.credit)
+    user.save
 
     if @users_plan.save
       render json: @users_plan
