@@ -17,7 +17,7 @@ class KlaimDashboard < Administrate::BaseDashboard
     photo: Field::String,
     tempat: Field::String,
     verify: Field::SelectBasic.with_options({
-      choices: ['PENDING', 'ACCEPT', 'ERROR']
+      choices: ['PENDING', 'ACCEPTED', 'REJECTED']
     }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
