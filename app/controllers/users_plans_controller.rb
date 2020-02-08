@@ -22,6 +22,7 @@ class UsersPlansController < ApplicationController
     plan = Plan.find(params[:plan_id])
     user = User.find(params[:user_id])
     user.decrement(:jumlah_kredit, plan.credit)
+    user.benefits = plan.benefits
     user.save
 
     if @users_plan.save
