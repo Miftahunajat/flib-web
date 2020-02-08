@@ -1,0 +1,2 @@
+class Pangkat < ApplicationRecord
+end

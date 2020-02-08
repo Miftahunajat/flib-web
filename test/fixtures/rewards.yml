@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama: MyString
+  startdate: 2020-02-06
+  enddate: 2020-02-06
+  jumlah_kredit: 9.99
+  photo: MyString
+
+two:
+  nama: MyString
+  startdate: 2020-02-06
+  enddate: 2020-02-06
+  jumlah_kredit: 9.99
+  photo: MyString

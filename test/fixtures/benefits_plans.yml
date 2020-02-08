@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  benefit: one
+  plan: one
+  pangkat: one
+  jumlah: 9.99
+
+two:
+  benefit: two
+  plan: two
+  pangkat: two
+  jumlah: 9.99

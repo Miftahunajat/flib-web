@@ -1,0 +1,38 @@
+require 'test_helper'
+
+class BenefitsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @benefit = benefits(:one)
+  end
+
+  test "should get index" do
+    get benefits_url, as: :json
+    assert_response :success
+  end
+
+  test "should create benefit" do
+    assert_difference('Benefit.count') do
+      post benefits_url, params: { benefit: { benefit_category_id: @benefit.benefit_category_id, nama: @benefit.nama, nilai_tukar: @benefit.nilai_tukar } }, as: :json
+    end
+
+    assert_response 201
+  end
+
+  test "should show benefit" do
+    get benefit_url(@benefit), as: :json
+    assert_response :success
+  end
+
+  test "should update benefit" do
+    patch benefit_url(@benefit), params: { benefit: { benefit_category_id: @benefit.benefit_category_id, nama: @benefit.nama, nilai_tukar: @benefit.nilai_tukar } }, as: :json
+    assert_response 200
+  end
+
+  test "should destroy benefit" do
+    assert_difference('Benefit.count', -1) do
+      delete benefit_url(@benefit), as: :json
+    end
+
+    assert_response 204
+  end
+end

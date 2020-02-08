@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama: MyString
+  status: MyString
+  usia: 9.99
+  pangkat: 9.99
+  tanggal_masuk: 2020-02-05
+  jumlah_dependant: 9.99
+  jumlah_kredit: 9.99
+
+two:
+  nama: MyString
+  status: MyString
+  usia: 9.99
+  pangkat: 9.99
+  tanggal_masuk: 2020-02-05
+  jumlah_dependant: 9.99
+  jumlah_kredit: 9.99
