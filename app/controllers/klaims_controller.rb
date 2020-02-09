@@ -24,6 +24,7 @@ class KlaimsController < ApplicationController
     @klaim.photo = params[:file]
     @klaim.tempat = params[:tempat]
     @klaim.kredit = params[:kredit]
+    @klaim.verify = params[:verify]
 
     if @klaim.save
       render json: @klaim, status: :created, location: @klaim
